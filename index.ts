@@ -17,7 +17,6 @@ class RootController {
 
   @Get('/async')
   private async(req: express.Request, res: express.Response) {
-    res.setHeader('Content-Type', 'application/json');
     setTimeout(() => {
       res.status(200).json({
         success: true
