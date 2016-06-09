@@ -1,0 +1,30 @@
+{
+  "name": "expresstest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrent": "^0.3.2",
+    "express": "^4.13.4",
+    "inversify-dts": "^1.0.5",
+    "inversify-express-utils": "^1.0.0-alpha.3",
+    "ts-node": "^0.8.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "postinstall": "typings i",
+    "start": "ts-node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-abs/testing-inversify-express-utils.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m-abs/testing-inversify-express-utils/issues"
+  },
+  "homepage": "https://github.com/m-abs/testing-inversify-express-utils#readme"
+}
