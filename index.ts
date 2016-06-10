@@ -11,17 +11,35 @@ import { injectable, inject } from 'inversify';
 @injectable()
 class RootController {
   @Get('/')
-  private index(req: express.Request): string {
+  private index(req: express.Request, res: express.Response, next: express.NextFunction) {
+    console.log('index');
+    return next();
+  }
+
+  @Get('/')
+  private index2(req: express.Request): string {
+    console.log('index2');
     return 'indexi';
   }
 
   @Get('/async')
+  private notAsync(req: express.Request, res: express.Response, next: express.NextFunction) {
+    return next();
+  }
+
+  @Get('/async')
   private async(req: express.Request, res: express.Response) {
-    setTimeout(() => {
-      res.status(200).json({
-        success: true
-      });
-    }, 1000);
+    console.log('async');
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        res.status(200).json({
+          success: true
+        });
+
+        resolve(true);
+      }, 1000);
+    });
   }
 }
 
